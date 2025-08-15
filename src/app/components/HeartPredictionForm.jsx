@@ -23,16 +23,30 @@ function HeartPredictionForm() {
     const [result, setResult] = useState(null);
 
     function handleChange(e) {
-        setFormData({...formData, [e.target.name]: e.target.value});
-        // Clear error when user starts typing
-        if (errors[e.target.name]) {
-            setErrors(prev => {
-                const newErrors = {...prev};
-                delete newErrors[e.target.name];
-                return newErrors;
-            });
-        }
+    let { name, value } = e.target;
+
+    // If the value contains '/' or '\', take only the part before
+    if (value.includes('/') || value.includes('\\')) {
+        value = value.split(/[/\\]/)[0];
     }
+
+    // Convert to number if possible
+    const numericValue = value ? Number(value) : '';
+
+    setFormData({
+        ...formData,
+        [name]: numericValue
+    });
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+        setErrors(prev => {
+            const newErrors = { ...prev };
+            delete newErrors[name];
+            return newErrors;
+        });
+    }
+}
 
     const validateForm = () => {
         const newErrors = {};

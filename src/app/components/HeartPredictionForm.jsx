@@ -25,33 +25,33 @@ function HeartPredictionForm() {
     function handleChange(e) {
     let { name, value } = e.target;
 
-    // If the value contains '/' or '\', take only the part before
-    if (value.includes('/') || value.includes('\\')) {
+    // Normalize input: take only part before '/' or '\'
+    if (/[\/\\]/.test(value)) {
         value = value.split(/[/\\]/)[0];
     }
 
-    // List of numeric fields
-    const numericFields = [
-        "age", "restingBP", "cholesterol", "maxHR", "oldPeak"
-    ];
+    // Fields that should be numbers
+    const numericFields = ["age", "restingBP", "cholesterol", "maxHR", "oldPeak"];
 
     let finalValue = value;
 
+    // Convert to number only if it's in numericFields
     if (numericFields.includes(name)) {
-        finalValue = value ? Number(value) : '';
+        // Remove anything that's not a digit or decimal point
+        const numericOnly = value.replace(/[^\d.]/g, "");
+        finalValue = numericOnly ? Number(numericOnly) : "";
     }
 
-    setFormData({
-        ...formData,
+    setFormData(prev => ({
+        ...prev,
         [name]: finalValue
-    });
+    }));
 
     // Clear error when user starts typing
     if (errors[name]) {
         setErrors(prev => {
-            const newErrors = { ...prev };
-            delete newErrors[name];
-            return newErrors;
+            const { [name]: _, ...rest } = prev;
+            return rest;
         });
     }
 }

@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ❤️ Heart Disease Prediction
 
-## Getting Started
+This project uses **Machine Learning** to predict the likelihood of heart disease based on patient clinical data.  
+It demonstrates skills in **data preprocessing, feature engineering, and predictive modeling** using Python. 
 
-First, run the development server:
+<img width="953" height="990" alt="Screenshot 2025-08-16 113529" src="https://github.com/user-attachments/assets/b3a3e75f-bbbf-4297-9de6-8273d62c3006" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<img width="953" height="990" alt="Screenshot 2025-08-16 113529" src="https://github.com/user-attachments/assets/d9e82514-d0eb-41fe-9b33-9f87c710e7e5" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Features
+- Input patient data (age, sex, cholesterol, blood pressure, etc.)
+- Preprocess and clean the dataset
+- Train and evaluate machine learning models
+- Predict the likelihood of heart disease
+- Simple web interface (Next.js + API) to interact with the model
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📊 Dataset
+The model was trained using a publicly available dataset from **Kaggle**:  
+👉 [Heart Disease UCI Dataset](https://www.kaggle.com/ronitf/heart-disease-uci)  
 
-To learn more about Next.js, take a look at the following resources:
+**Key features include:**
+- Age  
+- Sex  
+- Chest Pain Type  
+- Resting Blood Pressure  
+- Cholesterol  
+- Fasting Blood Sugar  
+- Maximum Heart Rate  
+- Exercise Induced Angina  
+- ST Depression & more  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
+- **Python** (Pandas, NumPy, Scikit-learn, Matplotlib)  
+- **Next.js** (frontend form & API integration)  
+- **Flask / FastAPI** (backend prediction service)  
+- **Docker** (optional containerization)  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ How It Works
+1. User enters patient clinical data in the web form.  
+2. Data is sent to the backend API.  
+3. Machine learning model processes the input and predicts heart disease likelihood.  
+4. Prediction result is displayed in the UI.  

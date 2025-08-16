@@ -5,7 +5,7 @@ It demonstrates skills in **data preprocessing, feature engineering, and predict
 
 <img width="953" height="990" alt="Screenshot 2025-08-16 113529" src="https://github.com/user-attachments/assets/b3a3e75f-bbbf-4297-9de6-8273d62c3006" />
 
-<img width="953" height="990" alt="Screenshot 2025-08-16 113529" src="https://github.com/user-attachments/assets/d9e82514-d0eb-41fe-9b33-9f87c710e7e5" />
+<img width="631" height="862" alt="Screenshot 2025-08-16 120150" src="https://github.com/user-attachments/assets/bbcd92fe-9b7d-4d1c-8cc7-48a8319b02b0" />
 
 ---
 

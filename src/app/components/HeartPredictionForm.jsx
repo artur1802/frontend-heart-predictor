@@ -30,12 +30,20 @@ function HeartPredictionForm() {
         value = value.split(/[/\\]/)[0];
     }
 
-    // Convert to number if possible
-    const numericValue = value ? Number(value) : '';
+    // List of numeric fields
+    const numericFields = [
+        "age", "restingBP", "cholesterol", "maxHR", "oldPeak"
+    ];
+
+    let finalValue = value;
+
+    if (numericFields.includes(name)) {
+        finalValue = value ? Number(value) : '';
+    }
 
     setFormData({
         ...formData,
-        [name]: numericValue
+        [name]: finalValue
     });
 
     // Clear error when user starts typing
